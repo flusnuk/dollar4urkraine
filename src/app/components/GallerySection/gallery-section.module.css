@@ -1,6 +1,6 @@
 .section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, rgba(0, 87, 183, 0.02) 0%, rgba(255, 215, 0, 0.02) 100%);
+    background: white;
     position: relative;
     overflow: hidden;
 }
@@ -91,26 +91,15 @@
     padding: 2rem;
     max-height: 80vh;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 87, 183, 0.3) transparent;
+
+    /* приховуємо скролбар */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .gallery::-webkit-scrollbar {
-    width: 8px;
-}
-
-.gallery::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-}
-
-.gallery::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #0057b7, #ffd700);
-    border-radius: 4px;
-}
-
-.gallery::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #004494, #e6c200);
+    display: none;
+    /* Chrome, Safari, Edge */
 }
 
 .galleryItem {
@@ -182,22 +171,50 @@
     }
 }
 
-/* Responsive Design */
+/* ---------- Responsive Design ---------- */
 @media (max-width: 768px) {
+    .galleryContainer {
+        overflow: visible;
+        background: none;
+        box-shadow: none;
+        border: none;
+    }
+
     .gallery {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
         gap: 1rem;
         padding: 1rem;
+
+        scrollbar-width: none;
+        /* Firefox */
     }
-    
+
+    .gallery::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Edge */
+    }
+
+    .galleryItem {
+        flex: 0 0 85%;
+        scroll-snap-align: start;
+        min-width: 85%;
+        max-width: 85%;
+        height: auto;
+    }
+
     .imageWrapper {
         height: 200px;
     }
-    
+
     .title {
         font-size: 2rem;
     }
-    
+
     .description {
         font-size: 1rem;
     }
@@ -205,13 +222,13 @@
 
 @media (max-width: 480px) {
     .section {
-        padding: 3rem 0;
+        padding: 2rem 0;
     }
-    
+
     .header {
         margin-bottom: 2rem;
     }
-    
+
     .gallery {
         padding: 0.5rem;
     }

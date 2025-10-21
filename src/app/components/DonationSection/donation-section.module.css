@@ -1,12 +1,6 @@
 .section {
     padding: 6rem 0;
-    /* Softened gradient with more subtle color transitions */
-    background: linear-gradient(135deg,
-            rgba(0, 87, 183, 0.08) 0%,
-            rgba(26, 111, 212, 0.05) 30%,
-            rgba(255, 255, 255, 0.95) 50%,
-            rgba(255, 215, 0, 0.05) 70%,
-            rgba(255, 208, 0, 0.08) 100%);
+    background: white;
     position: relative;
     overflow: hidden;
     animation: sectionFadeIn 1.2s ease-out;

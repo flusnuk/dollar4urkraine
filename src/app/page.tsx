@@ -16,8 +16,8 @@ export default function Home() {
       <Header />
       <main className="min-h-screen">
       <HeroSection />
-      <WayForPayStats />
       <GallerySection />
+      <WayForPayStats />
       <DonationSection />
       <ValuesSection />
       <FaqSection />
