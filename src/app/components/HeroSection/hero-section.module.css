@@ -334,10 +334,20 @@
     }
 }
 
+@media (max-width: 768px) {
+.statsRow {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .statDivider {
+        display: none;
+    }
+}
 /* Stats Row */
 .statsRow {
     display: flex;
-    align-items: center;
     gap: 2rem;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.1);
