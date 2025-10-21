@@ -1,0 +1,246 @@
+.footer {
+    background: linear-gradient(135deg, #0057b7 0%, #1a6fd1 50%, #0057b7 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite, footerFadeIn 1s ease-out;
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes footerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffd700 0%, #0057b7 50%, #ffd700 100%);
+    background-size: 200% 100%;
+    animation: borderSlide 3s linear infinite;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.content {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.heart {
+    font-size: 2rem;
+    animation: heartbeat 2s ease-in-out infinite;
+    display: inline-block;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffd700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.2s ease-out 0.3s both;
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    animation: socialLinksSlideIn 1s ease-out 0.6s both;
+}
+
+@keyframes socialLinksSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.4s ease-out 0.5s both;
+}
+
+.socialLink {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.socialLink:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: #ffd700;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
+}
+
+.socialIcon {
+    width: 24px;
+    height: 24px;
+    fill: #ffd700;
+    transition: transform 0.3s ease;
+}
+
+.socialLink:hover .socialIcon {
+    transform: scale(1.2);
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+    margin: 1.5rem 0;
+    animation: fadeIn 1.6s ease-out 0.7s both;
+}
+
+.copyright {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    animation: fadeIn 1.8s ease-out 0.9s both;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes borderSlide {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10%,
+    30% {
+        transform: scale(1.1);
+    }
+
+    20%,
+    40% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .logoText {
+        font-size: 1.25rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .socialLinks {
+        gap: 1rem;
+    }
+
+    .socialLink {
+        width: 40px;
+        height: 40px;
+    }
+
+    .socialIcon {
+        width: 20px;
+        height: 20px;
+    }
+}
